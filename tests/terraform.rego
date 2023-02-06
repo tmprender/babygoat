@@ -21,7 +21,7 @@ touches_iam {
 # list of all resources of a given type
 resources[resource_type] := all {
     some resource_type
-    resource_types[resource_type]
+    #resource_types[resource_type]
     all := [name |
         name:= tfplan.resource_changes[_]
         name.type == resource_type
