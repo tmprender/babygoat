@@ -2,6 +2,9 @@ package terraform.analysis
 
 import input as tfplan
 
+# Consider exactly these resource types in calculations
+resource_types := {"aws_autoscaling_group", "aws_instance", "aws_iam", "aws_launch_configuration"}
+
 # Authorization holds if no changes are made to IAM
 default authz := false
 authz {
@@ -21,7 +24,7 @@ touches_iam {
 # list of all resources of a given type
 resources[resource_type] := all {
     some resource_type
-    #resource_types[resource_type]
+    resource_types[resource_type]
     all := [name |
         name:= tfplan.resource_changes[_]
         name.type == resource_type
