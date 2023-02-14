@@ -9,7 +9,7 @@ jobs:
   yor:
   
     permissions:
-      contents: read # for actions/checkout to fetch code
+      contents: write
       
     runs-on: ubuntu-latest
     
