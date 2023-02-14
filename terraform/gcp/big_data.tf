@@ -27,7 +27,11 @@ resource "google_bigquery_dataset" "dataset" {
   labels = {
     git_file             = "terraform__gcp__big_data_tf"
     git_org              = "tmprender"
-    git_repo             = "terragoat"
+    git_repo             = "babygoat"
     yor_trace            = "2560d883-bc3a-4cb6-b9fc-fb666edf626e"
+    git_commit           = "8721d10ff155b3f6992509fd9ba958e1baed2a02"
+    git_last_modified_at = "2023-02-06-23-42-49"
+    git_last_modified_by = "tprendervill"
+    git_modifiers        = "tprendervill"
   }
 }
