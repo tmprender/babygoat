@@ -1,4 +1,5 @@
-name: IaC tag and trace
+name: yor
+
 
 on:
   push:
@@ -6,7 +7,12 @@ on:
 
 jobs:
   yor:
+  
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
         name: Checkout repo
