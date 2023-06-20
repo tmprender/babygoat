@@ -151,3 +151,15 @@ resource "aws_s3_bucket" "logs" {
     yor_name = "logs"
   })
 }
+
+
+resource "aws_s3_bucket" "logs_log_bucket" {
+  bucket = "logs-log-bucket"
+}
+
+resource "aws_s3_bucket_logging" "logs" {
+  bucket = aws_s3_bucket.logs.id
+
+  target_bucket = aws_s3_bucket.logs_log_bucket.id
+  target_prefix = "log/"
+}
