@@ -33,5 +33,6 @@ resource "google_bigquery_dataset" "dataset" {
     git_last_modified_at = "2023-02-06-23-42-49"
     git_last_modified_by = "tprendervill"
     git_modifiers        = "tprendervill"
+    yor_name             = "dataset"
   }
 }

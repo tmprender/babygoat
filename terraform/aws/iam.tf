@@ -14,6 +14,8 @@ resource "aws_iam_user" "user" {
     git_org              = "tmprender"
     git_repo             = "babygoat"
     yor_trace            = "9b45b298-c1ea-426a-9644-610780021eaa"
+    }, {
+    yor_name = "user"
   })
 
 }

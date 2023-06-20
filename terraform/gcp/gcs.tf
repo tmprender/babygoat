@@ -17,6 +17,7 @@ resource "google_storage_bucket" "terragoat_website" {
     git_org              = "tmprender"
     git_repo             = "babygoat"
     yor_trace            = "7eaa4298-9c57-4346-b03f-95314f6cb36f"
+    yor_name             = "terragoat_website"
   }
 }
 

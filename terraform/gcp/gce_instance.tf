@@ -31,6 +31,7 @@ resource "google_compute_instance" "server" {
     git_org              = "tmprender"
     git_repo             = "babygoat"
     yor_trace            = "a9c2cdb8-fc27-41b7-9e2f-3dc603352731"
+    yor_name             = "server"
   }
 }
 resource "google_compute_disk" "unencrypted_disk" {
@@ -45,5 +46,6 @@ resource "google_compute_disk" "unencrypted_disk" {
     git_org              = "tmprender"
     git_repo             = "babygoat"
     yor_trace            = "c2cb2298-85b6-4706-918c-9bf58e1b4541"
+    yor_name             = "unencrypted_disk"
   }
 }
