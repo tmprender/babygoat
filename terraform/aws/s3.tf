@@ -155,6 +155,10 @@ resource "aws_s3_bucket" "logs" {
 
 resource "aws_s3_bucket" "logs_log_bucket" {
   bucket = "logs-log-bucket"
+  tags = {
+    git_repo  = "babygoat"
+    yor_trace = "dfbd318b-11e3-4e74-88ce-f54596bcdb36"
+  }
 }
 
 resource "aws_s3_bucket_logging" "logs" {
