@@ -12,14 +12,20 @@ provider "panos" {
     api_key = "secret"
 }
 
-data "panos_security_rule" "rule1" {
-    name = "my rule name"
 
-    tags = ["test","dev"]
+resource "panos_security_rule_group" "rule_group" {
+    rule = {
+      name = "my rule name"
+      tags = ["test", "dev"]
+    }
+
+    lifecycle {
+      create_before_destroy = true
+    }
 
 }
 
-resource "panos_address_object" "example" {
+resource "panos_address_object" "addr_obj" {
     name = "localnet"
     value = "192.168.80.0/24"
     description = "The 192.168.80 network"
