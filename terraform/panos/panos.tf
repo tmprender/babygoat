@@ -14,9 +14,19 @@ provider "panos" {
 
 
 resource "panos_security_rule_group" "rule_group" {
-    rule = {
-      name = "my rule name"
-      tags = ["test", "dev"]
+    rule {
+        name = "Deny everything else"
+        audit_comment = "Initial config"
+        source_zones = ["any"]
+        source_addresses = ["any"]
+        source_users = ["any"]
+        destination_zones = ["any"]
+        destination_addresses = ["any"]
+        applications = ["any"]
+        services = ["application-default"]
+        categories = ["any"]
+        action = "deny"
+        tags = ["test", "dev"]
     }
 
     lifecycle {
