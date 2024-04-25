@@ -1,16 +1,19 @@
-provider "paloaltonetworks/panos" {
+terraform {
+  required_providers {
+    panos = {
+      source = "PaloAltoNetworks/panos"
+      version = "1.11.1"
+    }
+  }
+}
+
+provider "panos" {
     hostname = "127.0.0.1"
     api_key = "secret"
 }
 
-resource "panos_telemetry" "pan_tel" {
-    threat_prevention_reports = false
-    threat_prevention_data = false
-    threat_prevention_packet_captures = false
+data "panos_security_rule" "example" {
+    name = "my rule name"
 
-    tags = {"k":"v"}
-
-    lifecycle {
-        create_before_destroy = true
-    }
+    tags = [{"k":"v"}]
 }
